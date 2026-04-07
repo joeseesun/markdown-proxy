@@ -1,5 +1,5 @@
 ---
-name: markdown-proxy
+name: qiaomu-markdown-proxy
 description: |
   Fetch any URL as clean Markdown via proxy services or built-in scripts.
   Works with login-required pages like X/Twitter, WeChat 公众号, Feishu/Lark docs.
@@ -30,11 +30,11 @@ version: 2.0.0
 
 ```
 if URL contains "mp.weixin.qq.com":
-    → python3 ~/.claude/skills/markdown-proxy/scripts/fetch_weixin.py "URL"
+    → python3 ~/.claude/skills/qiaomu-markdown-proxy/scripts/fetch_weixin.py "URL"
     → Done
 
 if URL contains "feishu.cn/docx/" or "feishu.cn/wiki/" or "larksuite.com/docx/":
-    → python3 ~/.claude/skills/markdown-proxy/scripts/fetch_feishu.py "URL"
+    → python3 ~/.claude/skills/qiaomu-markdown-proxy/scripts/fetch_feishu.py "URL"
     → Done
 
 if URL contains "youtube.com" or "youtu.be":
@@ -46,11 +46,11 @@ if URL ends with ".pdf" or is local PDF path:
         → Try: curl -sL "https://r.jina.ai/{url}"
         → If fails: download + extract_pdf.sh
     if local path:
-        → bash ~/.claude/skills/markdown-proxy/scripts/extract_pdf.sh "PATH"
+        → bash ~/.claude/skills/qiaomu-markdown-proxy/scripts/extract_pdf.sh "PATH"
     → Done
 
 else:
-    → bash ~/.claude/skills/markdown-proxy/scripts/fetch.sh "URL"
+    → bash ~/.claude/skills/qiaomu-markdown-proxy/scripts/fetch.sh "URL"
     → Done
 ```
 
@@ -86,22 +86,22 @@ After saving and reporting the path, **stop**. Do not analyze, comment on, or di
 
 ### General URL
 ```bash
-bash ~/.claude/skills/markdown-proxy/scripts/fetch.sh "https://example.com/article"
+bash ~/.claude/skills/qiaomu-markdown-proxy/scripts/fetch.sh "https://example.com/article"
 ```
 
 ### X/Twitter Post
 ```bash
-bash ~/.claude/skills/markdown-proxy/scripts/fetch.sh "https://x.com/username/status/1234567890"
+bash ~/.claude/skills/qiaomu-markdown-proxy/scripts/fetch.sh "https://x.com/username/status/1234567890"
 ```
 
 ### WeChat Article
 ```bash
-python3 ~/.claude/skills/markdown-proxy/scripts/fetch_weixin.py "https://mp.weixin.qq.com/s/abc123"
+python3 ~/.claude/skills/qiaomu-markdown-proxy/scripts/fetch_weixin.py "https://mp.weixin.qq.com/s/abc123"
 ```
 
 ### Feishu Document
 ```bash
-python3 ~/.claude/skills/markdown-proxy/scripts/fetch_feishu.py "https://xxx.feishu.cn/docx/xxxxxxxx"
+python3 ~/.claude/skills/qiaomu-markdown-proxy/scripts/fetch_feishu.py "https://xxx.feishu.cn/docx/xxxxxxxx"
 ```
 
 ### PDF (Remote)
@@ -111,12 +111,12 @@ curl -sL "https://r.jina.ai/https://example.com/paper.pdf"
 
 ### PDF (Local)
 ```bash
-bash ~/.claude/skills/markdown-proxy/scripts/extract_pdf.sh "/path/to/paper.pdf"
+bash ~/.claude/skills/qiaomu-markdown-proxy/scripts/extract_pdf.sh "/path/to/paper.pdf"
 ```
 
 ### With Custom Proxy
 ```bash
-bash ~/.claude/skills/markdown-proxy/scripts/fetch.sh "https://example.com" "http://127.0.0.1:7890"
+bash ~/.claude/skills/qiaomu-markdown-proxy/scripts/fetch.sh "https://example.com" "http://127.0.0.1:7890"
 ```
 
 ## Notes

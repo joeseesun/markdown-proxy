@@ -7,7 +7,7 @@ Use `scripts/fetch.sh` for automatic proxy cascade with fallback. Try in order u
 ### 1. r.jina.ai
 
 ```bash
-bash ~/.claude/skills/markdown-proxy/scripts/fetch.sh "https://example.com"
+bash ~/.claude/skills/qiaomu-markdown-proxy/scripts/fetch.sh "https://example.com"
 ```
 
 Wide coverage, preserves image links. Try this first.
@@ -23,7 +23,7 @@ Last resort local tool, automatically tried if both proxies fail.
 ### With Custom Proxy
 
 ```bash
-bash ~/.claude/skills/markdown-proxy/scripts/fetch.sh "https://example.com" "http://127.0.0.1:7890"
+bash ~/.claude/skills/qiaomu-markdown-proxy/scripts/fetch.sh "https://example.com" "http://127.0.0.1:7890"
 ```
 
 ## PDF to Markdown
@@ -40,13 +40,13 @@ If that fails, download and extract locally:
 
 ```bash
 curl -sL "https://example.com/paper.pdf" -o /tmp/input.pdf
-bash ~/.claude/skills/markdown-proxy/scripts/extract_pdf.sh /tmp/input.pdf
+bash ~/.claude/skills/qiaomu-markdown-proxy/scripts/extract_pdf.sh /tmp/input.pdf
 ```
 
 ### Local PDF File
 
 ```bash
-bash ~/.claude/skills/markdown-proxy/scripts/extract_pdf.sh /path/to/file.pdf
+bash ~/.claude/skills/qiaomu-markdown-proxy/scripts/extract_pdf.sh /path/to/file.pdf
 ```
 
 The script tries three methods in order:
@@ -70,7 +70,7 @@ Use the proxy cascade first (r.jina.ai / defuddle.md). Works for most articles w
 If proxies are blocked, use the built-in Playwright script as last resort:
 
 ```bash
-python3 ~/.claude/skills/markdown-proxy/scripts/fetch_weixin.py "https://mp.weixin.qq.com/s/abc123"
+python3 ~/.claude/skills/qiaomu-markdown-proxy/scripts/fetch_weixin.py "https://mp.weixin.qq.com/s/abc123"
 ```
 
 **Requirements** (one-time setup, ~300 MB):
@@ -83,7 +83,7 @@ playwright install chromium
 
 **JSON output**:
 ```bash
-python3 ~/.claude/skills/markdown-proxy/scripts/fetch_weixin.py "URL" --json
+python3 ~/.claude/skills/qiaomu-markdown-proxy/scripts/fetch_weixin.py "URL" --json
 ```
 
 ## Feishu / Lark Document
@@ -93,7 +93,7 @@ Built-in API script for Feishu documents. Requires app credentials:
 ```bash
 export FEISHU_APP_ID=your_app_id
 export FEISHU_APP_SECRET=your_app_secret
-python3 ~/.claude/skills/markdown-proxy/scripts/fetch_feishu.py "https://xxx.feishu.cn/docx/xxxxxxxx"
+python3 ~/.claude/skills/qiaomu-markdown-proxy/scripts/fetch_feishu.py "https://xxx.feishu.cn/docx/xxxxxxxx"
 ```
 
 **Supported types**:
@@ -107,7 +107,7 @@ python3 ~/.claude/skills/markdown-proxy/scripts/fetch_feishu.py "https://xxx.fei
 
 **JSON output**:
 ```bash
-python3 ~/.claude/skills/markdown-proxy/scripts/fetch_feishu.py "URL" --json
+python3 ~/.claude/skills/qiaomu-markdown-proxy/scripts/fetch_feishu.py "URL" --json
 ```
 
 ## YouTube Videos
@@ -117,7 +117,7 @@ Use the dedicated `yt-search-download` skill for YouTube content. It handles:
 - Subtitle extraction
 - Transcript generation
 
-Do not use markdown-proxy for YouTube URLs.
+Do not use qiaomu-markdown-proxy for YouTube URLs.
 
 ## Content Validation
 

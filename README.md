@@ -1,4 +1,4 @@
-# markdown-proxy
+# qiaomu-markdown-proxy
 
 > Convert any URL to clean Markdown, with built-in support for login-required pages (X/Twitter, WeChat, Feishu/Lark docs, etc.)
 
@@ -48,12 +48,12 @@ Send any URL to Claude, and it automatically fetches the full content as Markdow
 ### Installation
 
 ```bash
-npx skills add joeseesun/markdown-proxy
+npx skills add joeseesun/qiaomu-markdown-proxy
 ```
 
 Verify:
 ```bash
-ls ~/.claude/skills/markdown-proxy/SKILL.md
+ls ~/.claude/skills/qiaomu-markdown-proxy/SKILL.md
 ```
 
 ### Usage
@@ -142,12 +142,12 @@ Built-in `fetch_feishu.py` script fetches documents via Feishu Open API and auto
 ### 安装
 
 ```bash
-npx skills add joeseesun/markdown-proxy
+npx skills add joeseesun/qiaomu-markdown-proxy
 ```
 
 验证：
 ```bash
-ls ~/.claude/skills/markdown-proxy/SKILL.md
+ls ~/.claude/skills/qiaomu-markdown-proxy/SKILL.md
 ```
 
 ### 使用示例
