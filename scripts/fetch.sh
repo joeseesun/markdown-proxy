@@ -17,15 +17,19 @@ _curl() {
 
 _has_content() {
   local content="$1"
-  local line_count=$(echo "$content" | wc -l | tr -d ' ')
+  local line_count=$(printf '%s\n' "$content" | wc -l | tr -d ' ')
 
   # Must have more than 5 lines
   [ "$line_count" -gt 5 ] || return 1
 
-  # Filter out common error pages
-  echo "$content" | grep -qv "Don't miss what's happening" || return 1
-  echo "$content" | grep -qv "Access Denied" || return 1
-  echo "$content" | grep -qv "404 Not Found" || return 1
+  # Filter out common error pages (grep -c counts matching lines;
+  # if ALL lines match an error pattern the content is an error page)
+  local total_lines="$line_count"
+  local match
+  for pattern in "Don't miss what's happening" "Access Denied" "404 Not Found"; do
+    match=$(printf '%s\n' "$content" | grep -c "$pattern" || true)
+    [ "$match" -lt "$total_lines" ] || return 1
+  done
 
   return 0
 }
